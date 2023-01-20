@@ -1,0 +1,22 @@
+{
+  "name": "solidity_contracts",
+  "version": "1.0.0",
+  "description": "poc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Praj0810/DeFi_Lending_Solidity.git"
+  },
+  "author": "Prajakta Mohite",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Praj0810/DeFi_Lending_Solidity/issues"
+  },
+  "homepage": "https://github.com/Praj0810/DeFi_Lending_Solidity#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.8.1"
+  }
+}
