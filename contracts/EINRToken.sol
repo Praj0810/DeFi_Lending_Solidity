@@ -10,10 +10,7 @@ contract EINRToken is ERC20{
 
     constructor() ERC20("EINR Token", "EINR"){
        ownerINR = msg.sender;
-    }
-
-     function mint(address account, uint256 amount)external {
-        _mint(account, amount);
+       _mint(msg.sender, 1000000 * 10 ** 18);
     }
    
 }  

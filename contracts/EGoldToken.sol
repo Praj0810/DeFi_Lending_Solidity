@@ -10,10 +10,8 @@ contract EGoldToken is ERC20{
 
     constructor() ERC20("EGold Token", "EGold"){
        ownerGold = msg.sender;
+       _mint(msg.sender, 2000000 * 10 ** 18);
     }
-
-     function mint(address account, uint256 amount)external {
-        _mint(account, amount);
-    }
+    
    
 }

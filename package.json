@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Praj0810/DeFi_Lending_Solidity#readme",
   "dependencies": {
-    "@openzeppelin/contracts": "^4.8.1"
+    "@openzeppelin/contracts": "^4.8.1",
+    "@truffle/hdwallet-provider": "^2.1.6"
   }
 }
