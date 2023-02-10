@@ -6,14 +6,11 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
 contract EINRToken is ERC20{
     //Address of EINRToken contract
-    //address public tokenOwner;
+    address public ownerINR;
 
     constructor() ERC20("EINR Token", "EINR"){
-       // tokenOwner = msg.sender;
-    }
-
-     function mint(address account, uint256 amount)external {
-        _mint(account, amount);
+       ownerINR = msg.sender;
+       _mint(msg.sender, 1000000 * 10 ** 18);
     }
    
-}
+}  
