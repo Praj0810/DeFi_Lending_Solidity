@@ -3,17 +3,16 @@ const EGoldToken = artifacts.require("EGoldToken");
 const LPToken = artifacts.require("LPToken");
 const LendingPool = artifacts.require("LendingPool");
 
-module.exports = async function(deployer, accounts){
+module.exports = async function(deployer, accounts, network){
 
     await deployer.deploy(EINRToken);
-    await deployer.deploy(EGoldToken);
-    await deployer.deploy(LPToken);
-
     const eInrToken = await EINRToken.deployed();
+    await deployer.deploy(EGoldToken);
     const eGoldToken = await EGoldToken.deployed();
-    const lpToken = await LPToken.deployed();
-
+    await deployer.deploy(LPToken);
+    const lpToken = await LPToken.deployed();   
     await deployer.deploy(LendingPool,eInrToken.address, eGoldToken.address, lpToken.address);
     const lendingBorrowing = await LendingPool.deployed();
+
 
     }

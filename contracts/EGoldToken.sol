@@ -7,10 +7,14 @@ import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 contract EGoldToken is ERC20{
     //Address of EINRToken contract
     address public ownerGold;
-
+    
+    /** 
+    *@dev provide the name and the symbol of the token 
+    * minting of EGold token for deployer is done here 
+    */
     constructor() ERC20("EGold Token", "EGold"){
        ownerGold = msg.sender;
-       _mint(msg.sender, 2000000 * 10 ** 18);
+       _mint(msg.sender, 50000 * 10 ** 18);
     }
     
    

@@ -47,7 +47,7 @@ const infuraProjectId = process.env["INFURA_PROJECT_ID"];
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 
-contracts_build_directory: "../client/src/contracts",
+//contracts_build_directory: "../client/src/contracts",
 
 module.exports = {
   /**
@@ -90,7 +90,17 @@ module.exports = {
       gas: 5500000,        // Gas limit used for deploys.
       confirmations: 2,    // # of confirmations to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
-      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets)
+      skipDryRun: true,
+      networkCheckTimeout: 1000000     // Skip dry run before migrations? (default: false for public nets)
+    },
+
+    matic: {
+      provider: () => new HDWalletProvider(mnemonic, `https://matic-mumbai.chainstacklabs.com`),
+      network_id: 80001,
+      confirmations: 2,
+      timeoutBlocks: 200,
+      skipDryRun: true,
+      networkCheckTimeout: 1000000
     },
    
     // Useful for deploying to a public network.
@@ -119,13 +129,13 @@ module.exports = {
   // Configure your compilers
   compilers: {
     solc: {
-      version: "0.8.8" // Fetch exact version from solc-bin (default: truffle's version)
+      version: "0.8.8" ,// Fetch exact version from solc-bin (default: truffle's version)
       // docker: true,        // Use "0.5.1" you've installed locally with docker (default: false)
       // settings: {          // See the solidity docs for advice about optimization and evmVersion
-      //  optimizer: {
-      //    enabled: false,
-      //    runs: 200
-      //  },
+       optimizer: {
+         enabled: false,
+         runs: 200
+       },
       //  evmVersion: "byzantium"
       // }
     }
