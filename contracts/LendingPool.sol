@@ -178,7 +178,7 @@ contract LendingPool{
         require(finalRepayAmount > 0 , "User has insufficient Balance to repay the loan");
         uint256 duration = (block.timestamp - borrowedTime[msg.sender])/60; 
         uint256 interestContract =(((borrowEINRAmount[msg.sender]/1e18)* interestRateContract * duration)* 10 /(365 * 24 * 60));
-        eINRToken.transfer(wallet, interestContract);
+        eINRToken.transfer(admin, interestContract);
         uint256 payback = finalRepayAmount - interestContract;
         //console.log(payback);
         eINRToken.transferFrom(msg.sender ,address(this), payback);
